@@ -17,7 +17,8 @@ public class DrawingApp {
                 ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
         //triangle.draw();
        // @SuppressWarnings("unchecked")
-        Triangle triangle=(Triangle)context.getBean("triangle-alias");
+        Triangle triangle=(Triangle)context.getBean("triangle");
+        
         triangle.draw();
 
     }
