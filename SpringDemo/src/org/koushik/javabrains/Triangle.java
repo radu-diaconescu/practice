@@ -1,17 +1,25 @@
 package org.koushik.javabrains;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 import java.util.List;
 
 /**
  * Created by admin on 4/15/2016.
  */
-public class Triangle {
+public class Triangle implements  Shape {
     private Point pointA;
     private Point pointB;
     private Point pointC;
+    private String beanName;
 
     public void draw(){
-
+        System.out.println("Drawing Triangle");
         System.out.println("PointA=("+getPointA().getX()+ ","
                 +getPointA().getY()+")");
         System.out.println("PointB=("+getPointB().getX()+ ","
@@ -45,4 +53,17 @@ public class Triangle {
     public void setPointC(Point pointC) {
         this.pointC = pointC;
     }
+
+    public void myInit(){
+        System.out.println("My init method for triangle");
+    }
+
+    public void cleanUp(){
+        System.out.println("My cleanup method for triangle");
+    }
+
+
+
+
+
 }
